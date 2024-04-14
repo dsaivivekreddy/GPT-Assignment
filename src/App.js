@@ -51,7 +51,7 @@ class App extends Component{
   }
   render(){
     const {cryptoData,searchedInput,sortBy,sortType,activeColumn}=this.state
-    const filteredData=cryptoData.filter(each=>toString(each.id).includes(searchedInput) || each.name.toLowerCase().includes(searchedInput.toLowerCase()))
+    const filteredData=cryptoData.filter(each=>String(each.id).includes(searchedInput) || each.name.toLowerCase().includes(searchedInput.toLowerCase()))
     const sortedData = filteredData.sort((a, b) => {
       if (sortBy==="name"){
         if (sortType==='asc'){
